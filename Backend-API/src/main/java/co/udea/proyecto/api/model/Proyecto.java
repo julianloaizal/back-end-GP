@@ -1,7 +1,9 @@
 package co.udea.proyecto.api.model;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,8 +12,14 @@ import javax.persistence.Table;
 public class Proyecto {
 	
 	@Id
+	@Column(name="radicado")
+	@GeneratedValue
 	private int radicado;
+	
+	@Column(name="nombre")
+	@GeneratedValue
 	private String nombre;
+	
 	private int codio_tipo_proyecto;
 	private int cod_modalidad_proyecto;
 	private int asesor;

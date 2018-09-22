@@ -31,7 +31,7 @@ private static Logger log = LoggerFactory.getLogger(ProyectoController.class);
 	}
 	
 
-	@GetMapping("listar1")
+	@GetMapping("listar")
 	@ApiOperation(value = "Buscar todos", response = Page.class)
 	@ApiResponses(value = {
             @ApiResponse(code = 200, message = "Los proyectos fueron buscados", response = Page.class),

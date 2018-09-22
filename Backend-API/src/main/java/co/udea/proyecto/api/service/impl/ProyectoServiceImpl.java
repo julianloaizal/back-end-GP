@@ -12,7 +12,7 @@ import co.udea.proyecto.api.util.Messages;
 
 
 
-@Service("proyecto")
+@Service
 public class ProyectoServiceImpl implements ProyectoService {
 	
 	private final Logger log = LoggerFactory.getLogger(ProyectoServiceImpl.class);
