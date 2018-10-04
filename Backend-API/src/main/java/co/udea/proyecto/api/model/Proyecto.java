@@ -14,63 +14,94 @@ public class Proyecto {
 	@Id
 	@Column(name="radicado")
 	@GeneratedValue
-	private int radicado;
+	private Integer radicado;
 	
 	@Column(name="nombre")
 	@GeneratedValue
 	private String nombre;
 	
-	private int codio_tipo_proyecto;
-	private int cod_modalidad_proyecto;
-	private int asesor;
+	public Integer getAsesor() {
+		return asesor;
+	}
+
+	public void setAsesor(Integer asesor) {
+		this.asesor = asesor;
+	}
+
+	public Integer getCodigo_tipo_proyecto() {
+		return codigo_tipo_proyecto;
+	}
+
+	public void setCodigo_tipo_proyecto(Integer codigo_tipo_proyecto) {
+		this.codigo_tipo_proyecto = codigo_tipo_proyecto;
+	}
+
+	public void setRadicado(Integer radicado) {
+		this.radicado = radicado;
+	}
+
+	public void setCod_modalidad_proyecto(Integer cod_modalidad_proyecto) {
+		this.cod_modalidad_proyecto = cod_modalidad_proyecto;
+	}
+	@Column(name="asesor")
+	@GeneratedValue
+	private Integer asesor;
+	
+	@Column(name="codigo_tipo_proyecto")
+	@GeneratedValue
+	private Integer codigo_tipo_proyecto;
+	
+	@Column(name="cod_modalidad_proyecto")
+	@GeneratedValue
+	private Integer cod_modalidad_proyecto;
+
+	@Column(name="participantes")
+	@GeneratedValue
 	private String participantes;
+	
+	@Column(name="fecha_creacion")
+	@GeneratedValue
 	private String fecha_creacion;
+	
+	@Column(name="fecha_inicio")
+	@GeneratedValue
 	private String fecha_inicio;
+	
+	@Column(name="fecha_fin")
+	@GeneratedValue
 	private String fecha_fin;
+	
+	@Column(name="calificacion")
+	@GeneratedValue
 	private String calificacion;
+	
+	@Column(name="estado")
+	@GeneratedValue
 	private String estado;
+	
+	@Column(name="objetivo_general")
+	@GeneratedValue
 	private String objetivo_general;
 	
 	public Proyecto() {
 		super();
 	}
 
-	public Proyecto(int radicado, String nombre) {
+	public Proyecto(Integer radicado, String nombre) {
 		super();
 		this.radicado = radicado;
 		this.nombre = nombre;
 	}
 	
-	public int getRadicado() {
-		return radicado;
-	}
-	public void setRadicado(int radicado) {
-		this.radicado = radicado;
-	}
+	
 	public String getNombre() {
 		return nombre;
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public int getCodio_tipo_proyecto() {
-		return codio_tipo_proyecto;
-	}
-	public void setCodio_tipo_proyecto(int codio_tipo_proyecto) {
-		this.codio_tipo_proyecto = codio_tipo_proyecto;
-	}
-	public int getCod_modalidad_proyecto() {
-		return cod_modalidad_proyecto;
-	}
-	public void setCod_modalidad_proyecto(int cod_modalidad_proyecto) {
-		this.cod_modalidad_proyecto = cod_modalidad_proyecto;
-	}
-	public int getAsesor() {
-		return asesor;
-	}
-	public void setAsesor(int asesor) {
-		this.asesor = asesor;
-	}
+	
+
 	public String getParticipantes() {
 		return participantes;
 	}
