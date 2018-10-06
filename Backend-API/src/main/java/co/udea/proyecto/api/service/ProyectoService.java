@@ -10,9 +10,9 @@ public interface ProyectoService {
 	
 	//public Proyecto getProyecto(int id) ;
 	
-	//public Hero getHero(int id, String name) ;
+	//public Proyecto getProyecto(int id, String name) ;
 	
-	//public Hero searchHeroes(String term);
+	public List<Proyecto> searchProyectos(String estado);
 	
 	//public Hero updateHero(Hero hero);
 	

@@ -20,45 +20,23 @@ public class Proyecto {
 	@GeneratedValue
 	private String nombre;
 	
-	public Integer getAsesor() {
-		return asesor;
-	}
-
-	public void setAsesor(Integer asesor) {
-		this.asesor = asesor;
-	}
-
-	public Integer getCodigo_tipo_proyecto() {
-		return codigo_tipo_proyecto;
-	}
-
-	public void setCodigo_tipo_proyecto(Integer codigo_tipo_proyecto) {
-		this.codigo_tipo_proyecto = codigo_tipo_proyecto;
-	}
-
-	public void setRadicado(Integer radicado) {
-		this.radicado = radicado;
-	}
-
-	public void setCod_modalidad_proyecto(Integer cod_modalidad_proyecto) {
-		this.cod_modalidad_proyecto = cod_modalidad_proyecto;
-	}
+	@Column(name="tipo")
+	@GeneratedValue
+	private Integer tipo;
+	
+	@Column(name="id_programa")
+	@GeneratedValue
+	private Integer id_programa;
+	
 	@Column(name="asesor")
 	@GeneratedValue
 	private Integer asesor;
 	
-	@Column(name="codigo_tipo_proyecto")
+	@Column(name="responsable")
 	@GeneratedValue
-	private Integer codigo_tipo_proyecto;
+	private Integer responsable;
 	
-	@Column(name="cod_modalidad_proyecto")
-	@GeneratedValue
-	private Integer cod_modalidad_proyecto;
 
-	@Column(name="participantes")
-	@GeneratedValue
-	private String participantes;
-	
 	@Column(name="fecha_creacion")
 	@GeneratedValue
 	private String fecha_creacion;
@@ -66,7 +44,7 @@ public class Proyecto {
 	@Column(name="fecha_inicio")
 	@GeneratedValue
 	private String fecha_inicio;
-	
+
 	@Column(name="fecha_fin")
 	@GeneratedValue
 	private String fecha_fin;
@@ -75,13 +53,14 @@ public class Proyecto {
 	@GeneratedValue
 	private String calificacion;
 	
-	@Column(name="estado")
-	@GeneratedValue
-	private String estado;
-	
 	@Column(name="objetivo_general")
 	@GeneratedValue
 	private String objetivo_general;
+	
+	@Column(name="id_estado")
+	@GeneratedValue
+	private String idEstado;
+	
 	
 	public Proyecto() {
 		super();
@@ -102,12 +81,6 @@ public class Proyecto {
 	}
 	
 
-	public String getParticipantes() {
-		return participantes;
-	}
-	public void setParticipantes(String participantes) {
-		this.participantes = participantes;
-	}
 	public String getFecha_creacion() {
 		return fecha_creacion;
 	}
@@ -132,19 +105,58 @@ public class Proyecto {
 	public void setCalificacion(String calificacion) {
 		this.calificacion = calificacion;
 	}
-	public String getEstado() {
-		return estado;
-	}
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
+	
 	public String getObjetivo_general() {
 		return objetivo_general;
 	}
 	public void setObjetivo_general(String objetivo_general) {
 		this.objetivo_general = objetivo_general;
 	}
-	
+	public Integer getAsesor() {
+		return asesor;
+	}
+
+	public void setAsesor(Integer asesor) {
+		this.asesor = asesor;
+	}
+	public Integer getRadicado() {
+		return radicado;
+	}
+
+	public void setRadicado(Integer radicado) {
+		this.radicado = radicado;
+	}
+
+	public Integer getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(Integer tipo) {
+		this.tipo = tipo;
+	}
+
+	public Integer getId_programa() {
+		return id_programa;
+	}
+
+	public void setId_programa(Integer id_programa) {
+		this.id_programa = id_programa;
+	}
+
+	public String getId_estado() {
+		return idEstado;
+	}
+
+	public void setId_estado(String id_estado) {
+		this.idEstado = id_estado;
+	}
+	public Integer getResponsable() {
+		return responsable;
+	}
+
+	public void setResponsable(Integer responsable) {
+		this.responsable = responsable;
+	}
 	
 }
 
