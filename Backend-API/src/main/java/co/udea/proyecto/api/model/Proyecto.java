@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
+
 @Entity
 @Table(name = "proyectos")
 public class Proyecto {
@@ -157,6 +159,7 @@ public class Proyecto {
 	public void setResponsable(Integer responsable) {
 		this.responsable = responsable;
 	}
+
 	
 }
 

@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import co.udea.proyecto.api.dto.DTOProyecto;
+import co.udea.proyecto.api.mapping.proyectoMapper;
 import co.udea.proyecto.api.model.Proyecto;
 import co.udea.proyecto.api.service.ProyectoService;
 import io.swagger.annotations.ApiOperation;
@@ -51,8 +53,10 @@ private static Logger log = LoggerFactory.getLogger(ProyectoController.class);
             @ApiResponse(code = 400, message = "La petición es invalida"),
             @ApiResponse(code = 404, message = "Recurso no encontrado"),
             @ApiResponse(code = 500, message = "Error interno al procesar la respuesta")})
-	public ResponseEntity<List<Proyecto>> getProyecto( @PathVariable("estado") String estado){
+	public ResponseEntity<List<DTOProyecto>> getProyecto( @PathVariable("estado") String estado){
 		 log.debug("REST request getProyecto estado : {}", estado);
-		return ResponseEntity.ok(proyectoService.searchProyectos(estado));
+		return ResponseEntity.ok(proyectoMapper.ListAsProyectoDTO(proyectoService.searchProyectos2(estado)));
 	}
 }
+
+

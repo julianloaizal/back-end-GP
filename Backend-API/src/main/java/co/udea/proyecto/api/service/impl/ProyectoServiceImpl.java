@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import co.udea.proyecto.api.service.ProyectoService;
@@ -15,6 +16,7 @@ import co.udea.proyecto.api.util.Messages;
 
 
 @Service
+//@Qualifier(ProyectoServiceImpl);
 public class ProyectoServiceImpl implements ProyectoService {
 	
 	private final Logger log = LoggerFactory.getLogger(ProyectoServiceImpl.class);
@@ -36,12 +38,21 @@ public class ProyectoServiceImpl implements ProyectoService {
 	}
 	
 	@Override
-	public List<Proyecto> searchProyectos(String estado) {
-		log.debug("Inicio getHero: id = {}", estado);
-		List<Proyecto> proyectosActivos= proyectoRepository.findAllByIdEstado(estado);
+	public List<Proyecto> searchProyectos2(String estado) {
+		log.debug("Inicio getProyectos: id = {}", estado);
+		List<Proyecto>  proyectosActivos= proyectoRepository.findAllByIdEstado(estado);
 		
 		log.debug("Fin getProyectosActivos: proyecto = {}");
 		return proyectosActivos;
+	}
+	
+	@Override
+	public Proyecto searchProyectos(String estado) {
+		log.debug("Inicio getProyectos: id = {}", estado);
+		Optional<Proyecto> proyectosActivos= proyectoRepository.findByIdEstado(estado);
+		
+		log.debug("Fin getProyectosActivos: proyecto = {}");
+		return proyectosActivos.get();
 	}
 	
 }
