@@ -68,10 +68,21 @@ public class Proyecto {
 		super();
 	}
 
-	public Proyecto(Integer radicado, String nombre) {
+	public Proyecto(Integer radicado, String nombre, Integer tipo, Integer id_programa, Integer asesor, Integer responsable,
+			String fecha_creacion, String fecha_inicio, String fecha_fin, String calificacion, String objetivo_general, String idEstado) {
 		super();
 		this.radicado = radicado;
 		this.nombre = nombre;
+		this.tipo = tipo;
+		this.id_programa= id_programa;
+		this.asesor=asesor;
+		this.responsable=responsable;
+		this.fecha_creacion=fecha_creacion;
+		this.fecha_inicio=fecha_inicio;
+		this.fecha_fin=fecha_fin;
+		this.calificacion=calificacion;
+		this.objetivo_general=objetivo_general;
+		this.idEstado=idEstado;
 	}
 	
 	

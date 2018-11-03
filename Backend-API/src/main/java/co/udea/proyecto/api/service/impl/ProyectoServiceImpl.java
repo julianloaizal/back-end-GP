@@ -55,4 +55,31 @@ public class ProyectoServiceImpl implements ProyectoService {
 		return proyectosActivos.get();
 	}
 	
+	@Override
+	public Proyecto addProyectos(Proyecto proyecto) {
+		log.debug("Inicio addProyectos: id = {}", proyecto);
+		return proyectoRepository.save(proyecto);
+	}
+	
+	@Override
+	public Proyecto updateProyecto(Proyecto newProyecto) {
+		log.debug("Inicio updateProyecto: id = {}", newProyecto);
+		return proyectoRepository.save(newProyecto);
+	}
+	
+	@Override
+	public Proyecto getProyectoActualizar(Integer radicado) {
+		Optional<Proyecto> proyecto= proyectoRepository.findByRadicado(radicado);
+		
+		log.debug("Fin getproyecto: proyecto = {}", proyecto.get());
+		return proyecto.get();
+	}
+	
+	@Override
+	public Proyecto getProyecto(Integer radicado) {
+		Optional<Proyecto> proyecto= proyectoRepository.findByRadicado(radicado);
+		
+		log.debug("Fin getproyecto: proyecto = {}", proyecto.get());
+		return proyecto.get();
+	}
 }

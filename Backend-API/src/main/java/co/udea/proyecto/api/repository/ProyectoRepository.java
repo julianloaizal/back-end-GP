@@ -19,7 +19,7 @@ public interface ProyectoRepository extends JpaRepository<Proyecto, String>{
 	
 	public Optional<Proyecto> findByIdEstado(String estado);
 	
-	
+	public Optional<Proyecto> findByRadicado(Integer radicado);
 	
 
 }
