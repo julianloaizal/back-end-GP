@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -95,6 +96,7 @@ private static Logger log = LoggerFactory.getLogger(ProyectoController.class);
 		return new ResponseEntity<Proyecto>(proyecto, HttpStatus.OK);
 	}
 	
+	
 	@GetMapping(value = "consultar/{radicado}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Consultar proyecto por radicado", response = Page.class)
     @ApiResponses(value = {
@@ -105,6 +107,19 @@ private static Logger log = LoggerFactory.getLogger(ProyectoController.class);
 	public ResponseEntity<Proyecto> getProyecto( @PathVariable("radicado") Integer radicado){
 		 log.debug("REST request getHero id : {}", radicado);
 		return ResponseEntity.ok(proyectoService.getProyecto(radicado));
+	}
+	
+	@DeleteMapping(value = "borrar/{radicado}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "elimina un Proyecto", response = Page.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Heroe eliminado", response = Proyecto.class),
+            @ApiResponse(code = 400, message = "La petición es invalida"),
+            @ApiResponse(code = 404, message = "Recurso no actualizado"),
+            @ApiResponse(code = 500, message = "Error interno al procesar la respuesta")})
+	public void deleteHero( @PathVariable("radicado") Integer radicado){
+		log.debug("REST request getHero id : {}", radicado);
+		Proyecto proyecto = proyectoService.getProyecto(radicado);
+		proyectoService.deleteProyecto(proyecto);
 	}
 }
 

@@ -27,5 +27,5 @@ public interface ProyectoService {
 	
 	//public Hero addHero(Hero hero);
 	
-	//public void deleteHero(Hero hero);
+	public void deleteProyecto(Proyecto Proyecto);
 }

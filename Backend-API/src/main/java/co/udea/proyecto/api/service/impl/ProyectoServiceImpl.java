@@ -82,4 +82,10 @@ public class ProyectoServiceImpl implements ProyectoService {
 		log.debug("Fin getproyecto: proyecto = {}", proyecto.get());
 		return proyecto.get();
 	}
+	
+	@Override
+	public void deleteProyecto(Proyecto proyecto) {
+		log.debug("Inicio deleteProyecto: id = {}", proyecto);
+		proyectoRepository.delete(proyecto);
+	}
 }
